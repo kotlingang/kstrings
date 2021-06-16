@@ -1,12 +1,12 @@
 plugins {
-    // k-mpp, k-js or k-jvm
-    id(`k-jvm`)
+    id(dependenciesPlugin)
 }
 
-group = AppInfo.PACKAGE
-version = AppInfo.VERSION
 
 allprojects {
+    group = AppInfo.PACKAGE
+    version = AppInfo.VERSION
+
     repositories {
         mavenCentral()
     }

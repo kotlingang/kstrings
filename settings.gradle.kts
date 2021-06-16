@@ -1,5 +1,5 @@
 //rootProject.name = [name]
-rootProject.name = "kotlin-project-template"
+rootProject.name = "kstrings"
 
 includeBuild("buildUtils/dependencies")
 includeBuild("buildUtils/configuration")

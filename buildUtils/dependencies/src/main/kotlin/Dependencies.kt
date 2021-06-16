@@ -1,4 +1,4 @@
-@file:Suppress("FunctionName", "MemberVisibilityCanBePrivate")
+@file:Suppress("unused", "FunctionName", "MemberVisibilityCanBePrivate")
 
 object Dependencies {
     const val Self = "dependencies:dependencies:SNAPSHOT"
