@@ -1,5 +1,12 @@
 plugins {
     id(`k-android-library`)
+    id(publishPlugin)
+}
+
+publish {
+    component {
+        name = "release"
+    }
 }
 
 android {
@@ -10,6 +17,14 @@ android {
     defaultConfig {
         targetSdk = Version.COMPILE_SDK
         minSdk = Version.MIN_SDK
+    }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Version.COMPOSE
+        kotlinCompilerVersion = Version.KOTLIN
     }
 
     dependencies {

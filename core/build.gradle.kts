@@ -17,7 +17,3 @@ kotlin {
         }
     }
 }
-
-dependencies {
-
-}

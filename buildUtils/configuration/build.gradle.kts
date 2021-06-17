@@ -9,16 +9,19 @@ repositories {
 }
 
 dependencies {
-    implementation(Dependencies.Self)
+    implementation(Dependencies.Plugin)
+    implementation(Dependencies.Publish.Plugin)
 
     implementation(Dependencies.Android.Plugin)
 
-    // Used to prevent classpath conflicts
-    compileOnly(Dependencies.Kotlin.Plugin(version = "1.4.20"))
-    runtimeOnly(Dependencies.Kotlin.Plugin)
+    api(Dependencies.Kotlin.Plugin)
 }
 
 gradlePlugin {
+    plugins.register("configuration") {
+        id = "configuration"
+        implementationClass = "unused.GradlePlugin"
+    }
     plugins.register("k-mpp") {
         id = "k-mpp"
         implementationClass = "KotlinMultiplatformConfiguration"

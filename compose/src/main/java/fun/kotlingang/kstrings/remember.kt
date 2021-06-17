@@ -5,5 +5,5 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.remember
 
 
-public val <T : KStrings> T.remember: State<T>
-    @Composable get() = remember { state }
+@Composable
+public fun <T : KStrings> T.remember(): State<T>  = remember { state }

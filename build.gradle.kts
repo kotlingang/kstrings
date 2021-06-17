@@ -1,5 +1,13 @@
+import publish.configureDefaultPublish
+
 plugins {
     id(dependenciesPlugin)
+    id(configurationPlugin)
+    id(publishPlugin)
+}
+
+publish {
+    ignore = true
 }
 
 allprojects {
@@ -10,4 +18,7 @@ allprojects {
         mavenCentral()
         google()
     }
+
+    apply(plugin = publishPlugin)
+    configureDefaultPublish()
 }

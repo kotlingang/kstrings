@@ -1,7 +1,7 @@
 @file:Suppress("unused", "FunctionName", "MemberVisibilityCanBePrivate")
 
 object Dependencies {
-    const val Self = "dependencies:dependencies:SNAPSHOT"
+    const val Plugin = "dependencies:dependencies:SNAPSHOT"
 
     object Kotlin {
         val Plugin = Plugin()
@@ -11,6 +11,8 @@ object Dependencies {
         const val Jvm = "org.jetbrains.kotlin.jvm"
         const val Js = "org.jetbrains.kotlin.js"
         const val Android = "org.jetbrains.kotlin.android"
+
+        const val Reflection = "org.jetbrains.kotlin:kotlin-reflect:${Version.KOTLIN}"
     }
 
     object Android {
@@ -21,6 +23,14 @@ object Dependencies {
 
     object Androidx {
         const val Compose = "androidx.compose.runtime:runtime:${Version.COMPOSE}"
+    }
+
+    object MavenPublish {
+        const val PluginIn = "maven-publish"
+    }
+
+    object Publish {
+        const val Plugin = "publish:publish:SNAPSHOT"
     }
 
     object Project {
