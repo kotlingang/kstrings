@@ -22,3 +22,7 @@ public class LocalizedStringBuilder(private val default: String) {
         }
     }
 }
+
+public inline fun localizedString (
+    default: String, block: LocalizedStringBuilder.() -> Unit = {}
+): LocalizedString = LocalizedStringBuilder(default).apply(block).build()
