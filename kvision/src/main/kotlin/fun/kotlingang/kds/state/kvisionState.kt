@@ -11,6 +11,7 @@ public val <T : KStrings> T.kvisionState: ObservableState<T> get() =
 
         override fun subscribe(observer: (T) -> Unit): () -> Unit =
             with(state.observe { observer(it) }) {
+                observer(getState());
                 { unsubscribe() }
             }
     }
