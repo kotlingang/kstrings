@@ -15,7 +15,6 @@ public class LocalizedString (
         ) { default }
     }
 
-    public operator fun LocalizedString.getValue (
-        thisRef: KStrings, property: KProperty<*>
-    ): String = this[thisRef.code]
+    public operator fun getValue(thisRef: KStrings, property: KProperty<*>): String =
+        this[thisRef.code]
 }
