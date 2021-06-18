@@ -17,5 +17,5 @@ public val <T : KStrings> T.state: ObservableState<T> get() = object : Observabl
 
     override val value: T = this@state
 
-    override fun observe(onChange: (T) -> Unit) = mut.observe(onChange)
+    override fun observe(onChange: UnsubscribeAction.(T) -> Unit) = mut.observe(onChange)
 }
