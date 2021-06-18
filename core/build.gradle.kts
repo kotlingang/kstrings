@@ -6,7 +6,7 @@ kotlin {
     explicitApi()
 
     jvm()
-    js {
+    js(IR) {
         nodejs()
         browser()
     }

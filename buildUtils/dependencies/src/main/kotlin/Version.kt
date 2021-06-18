@@ -6,4 +6,6 @@ object Version {
     const val MIN_SDK = 1
 
     const val COMPOSE = "1.0.0-beta09"
+
+    const val KVISION = "4.6.0"
 }

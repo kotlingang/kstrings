@@ -33,6 +33,10 @@ object Dependencies {
         const val Plugin = "publish:publish:SNAPSHOT"
     }
 
+    object KVision {
+        const val Core = "io.kvision:kvision:${Version.KVISION}"
+    }
+
     object Project {
         const val Core = ":core"
     }

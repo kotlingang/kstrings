@@ -13,3 +13,4 @@ includeBuild("buildUtils/publish")
 
 include("core")
 include("compose")
+include("kvision")

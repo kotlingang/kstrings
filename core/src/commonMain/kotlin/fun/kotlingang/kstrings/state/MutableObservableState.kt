@@ -4,7 +4,7 @@ package `fun`.kotlingang.kstrings.state
 public interface MutableObservableState<T> : ObservableState<T> {
     override var value: T
 
-    override fun observe(onChange: (T) -> Unit)
+    override fun observe(onChange: UnsubscribeAction.(T) -> Unit): UnsubscribeAction
 }
 
 @Suppress("FunctionName")

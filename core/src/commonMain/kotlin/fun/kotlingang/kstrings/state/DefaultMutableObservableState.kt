@@ -5,18 +5,29 @@ import kotlin.properties.Delegates
 
 
 internal class DefaultMutableObservableState<T>(value: T) : MutableObservableState<T> {
-    private val observers = mutableListOf<(T) -> Unit>()
+    private val observers = mutableListOf<UnsubscribeAction.(T) -> Unit>()
 
     override var value: T by Delegates.observable(value) { _, _, value ->
         platformSynchronized(lock = this) {
-            for (observer in observers)
-                observer(value)
+            for (observer in observers) observer (
+                {
+                    platformSynchronized(lock = this) {
+                        observers -= observer
+                    }
+                },
+                value
+            )
         }
     }
 
-    override fun observe(onChange: (T) -> Unit) {
+    override fun observe(onChange: UnsubscribeAction.(T) -> Unit): UnsubscribeAction {
         platformSynchronized(lock = this) {
             observers += onChange
+        }
+        return UnsubscribeAction {
+            platformSynchronized(lock = this) {
+                observers -= onChange
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ gradlePlugin {
     }
     plugins.register("k-js") {
         id = "k-js"
-        implementationClass = "KotlinJvmConfiguration"
+        implementationClass = "KotlinJsConfiguration"
     }
     plugins.register("k-android-library") {
         id = "k-android-library"
