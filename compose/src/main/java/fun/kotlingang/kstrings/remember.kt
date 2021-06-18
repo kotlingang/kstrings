@@ -6,4 +6,4 @@ import androidx.compose.runtime.remember
 
 
 @Composable
-public fun <T : KStrings> T.remember(): State<T>  = remember { state }
+public fun <T : KStrings> T.remember(): State<T>  = remember { composeState }

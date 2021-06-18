@@ -6,11 +6,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.neverEqualPolicy
 
 
-public val <T : KStrings> T.state: State<T>
-    get() = object : MutableState<T> by mutableStateOf(value = this@state, policy = neverEqualPolicy()) {
+public val <T : KStrings> T.composeState: State<T>
+    get() = object : MutableState<T> by mutableStateOf(value = this@composeState, policy = neverEqualPolicy()) {
         init {
             codeState.observe {
-                component2()(this@state)
+                component2()(this@composeState)
             }
         }
     }

@@ -1,4 +1,6 @@
-package `fun`.kotlingang.kstrings.models
+package `fun`.kotlingang.kstrings
+
+import kotlin.reflect.KProperty
 
 
 public typealias LocalizeVariants = Map<String, String>
@@ -12,4 +14,8 @@ public class LocalizedString (
             key = code ?: return default
         ) { default }
     }
+
+    public operator fun LocalizedString.getValue (
+        thisRef: KStrings, property: KProperty<*>
+    ): String = this[thisRef.code]
 }

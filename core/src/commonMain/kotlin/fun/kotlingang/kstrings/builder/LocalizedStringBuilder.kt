@@ -1,6 +1,6 @@
 package `fun`.kotlingang.kstrings.builder
 
-import `fun`.kotlingang.kstrings.models.LocalizedString
+import `fun`.kotlingang.kstrings.LocalizedString
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
